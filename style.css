@@ -1,0 +1,44 @@
+:root {
+  --cardWidth: 157px;
+  --cardHeight: 220px;
+}
+
+.cardContainer {
+  margin-top: 30px;
+  position: relative;
+}
+.card {
+  position: absolute;
+  height: var(--cardHeight);
+  width: var(--cardWidth);
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.cardImg {
+  height: 100%;
+}
+.cardBack {
+  transform: rotateY(180deg);
+}
+
+.card:hover .cardInner {
+  transform: rotateY(180deg);
+}
